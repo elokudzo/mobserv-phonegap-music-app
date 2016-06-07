@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "fr.eurecom.musicfm"
+        }
+    },
+    "dependent_plugins": {}
+}

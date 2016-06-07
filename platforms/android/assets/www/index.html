@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+     <meta http-equiv="Content-Security-Policy" content="default-src *; script-src &apos;self&apos;
+&apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src &apos;self&apos; &apos;unsafe-
+inline&apos; &apos;unsafe-eval&apos; *">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"
+	  type="text/css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+        <title>Audio Player</title>
+    </head>
+    
+   <body onload='javascript: app.initialize()'>
+
+  <div data-role="page" data-theme="b" id="page-home" style="background-color:#f9f9f9;">
+      
+      <div data-role="header" data-nobackbtn="true" fixed="true" data-theme="b">
+	<h1>Audio Player</h1>
+      </div>
+      <!-- /header -->
+      <!-- <div data-role="tabs" id="tabs"> --> 
+      <div data-role="navbar" data-theme="b" class="themed">
+	<ul>
+	  <li>
+	    <a id="nav-manual">Manual Player</a>
+	  </li>
+	  <li>
+	    <a id="nav-list1">Search and Recommend concerts </a>
+	  </li>
+	  <li>
+	    <a id="nav-list2">Tour Search</a>
+	  </li>
+	  <li>
+	    <a id="nav-list3">SD player</a>
+	  </li>
+	  <li>
+	    <a id="nav-list4">Help</a>
+	  </li>
+
+	</ul>
+      </div>		
+      
+      <div data-role="content" id="content-manual" data-theme="c">
+	
+	<div class="ui-grid-b">
+	  <div class="ui-block-a"></div>
+	  <div data-role="button" class="ui-block-b" id="pauseaudio"
+	       data-theme="e">Pause
+	  </div>
+	</div>
+	
+	<div class="ui-grid-b">
+	  <div class="ui-block-a"></div>
+	  <div data-role="button" class="ui-block-b" id="stopaudio"
+	       data-theme="e">Stop
+	  </div>
+	</div>
+	
+	<div>
+	  <h5 style="text-align:center;"> 
+	    Current:<span id="audio_position"> 0 sec</span>
+	    &emsp;Total:<span id=media_dur> 0 sec </span>  
+	  </h5>
+	</div>		
+	
+	<div class="ui-grid-solo">
+	  <p data-role="button" id="music3"> <small>Hymne France voix</small></p>
+	
+	  <div data-role="button" id="music4" data-theme="a">Radio</div>
+	</div>	
+	
+	<center>
+	<div>
+		<a href="#" onClick="changeRadio(1)">Addict Rock</a><br>
+		<a href="#" onClick="changeRadio(2)">Radio Española</a><br>
+		<a href="#" onClick="changeRadio(3)">PowerTürk</a><br>
+	<div>
+	</center>
+	  
+      </div>
+      <!-- /content-manual -->
+
+
+      <!-- Search Concert -->
+
+      <div data-role="content" id="content-list1" data-theme="c">
+	<input id="artistNameConcert" type="text" name="word" value="muse"
+	       placeholder="ArtistName"/>
+	<input type="text" id="cityName" name="word" value="nice"
+	       placeholder="cityName"/> 
+	<a href="#" id="searchButtonConcert" data-role="button">Search Concert</a> 
+	<div id="resultConcert"></div>
+      </div>
+      
+      <!-- Search Tour -->
+
+      <div data-role="content" id="content-list2" data-theme="c">
+	<!-- <input id="artistNameTour" type="text" name="word" value="muse"
+	   placeholder="artistName"/>
+	<input type="text" id="yearTour" name="word" value="2013"
+	   placeholder="year"/>  --> 
+	<input type="text" id="cityNameTour" name="word" value="Cannes"
+	       placeholder="cityName"/> 
+	<a href="#" id="searchButtonTour" data-role="button">Search Tour</a> 
+	<div id="resultTours" > </div>
+      </div>
+
+    </div>
+   
+      
+        <!-- /page -->
+    
+    </body>
+</html>
